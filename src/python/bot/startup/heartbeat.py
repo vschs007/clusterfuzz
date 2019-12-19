@@ -24,6 +24,8 @@ import os
 import sys
 import time
 
+from google.cloud import ndb
+
 from base import dates
 from base import tasks
 from datastore import data_handler
@@ -116,4 +118,6 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+  ndb_client = ndb.Client()
+  with ndb_client.context():
+    main()
