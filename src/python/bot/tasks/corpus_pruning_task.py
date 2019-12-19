@@ -20,6 +20,8 @@ import os
 import random
 import shutil
 
+from google.cloud import ndb
+
 from base import utils
 from bot.fuzzers import engine
 from bot.fuzzers import engine_common
@@ -33,7 +35,6 @@ from crash_analysis.stack_parsing import stack_symbolizer
 from datastore import data_handler
 from datastore import data_types
 from datastore import fuzz_target_utils
-from datastore import ndb
 from fuzzing import corpus_manager
 from fuzzing import leak_blacklist
 from google_cloud_utils import blobs
